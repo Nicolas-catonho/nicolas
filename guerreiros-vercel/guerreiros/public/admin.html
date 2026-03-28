@@ -114,17 +114,19 @@ if(sessionStorage.getItem(SESSION_KEY) === "1"){
 const {useState,useEffect,useRef,useMemo,useCallback}=React;
 const {AreaChart,Area,BarChart,Bar,XAxis,YAxis,CartesianGrid,Tooltip,ResponsiveContainer,LineChart,Line}=Recharts;
 
-// ── Cloud DB API ──────────────────────────────────────────────────────────────
-// When hosted on Netlify, uses /api/db (Netlify Function with Blobs).
-// Locally, falls back to localStorage only.
+// ── Cloud DB API (Vercel KV) ──────────────────────────────────────────────────
+// Usa /api/db (Vercel Serverless Function + KV Redis).
+// Em desenvolvimento local, cai no localStorage como fallback.
 const API_BASE = "/api/db";
 
 async function cloudGet(key) {
   try {
-    const r = await fetch(`${API_BASE}?key=${key}`);
+    const r = await fetch(`${API_BASE}?key=${encodeURIComponent(key)}`, {
+      headers: { "Content-Type": "application/json" }
+    });
     if(!r.ok) return null;
     const d = await r.json();
-    return d.value;
+    return d.value ?? null;
   } catch(_) { return null; }
 }
 
@@ -132,8 +134,8 @@ async function cloudSet(key, value) {
   try {
     const r = await fetch(API_BASE, {
       method: "POST",
-      headers: {"Content-Type":"application/json"},
-      body: JSON.stringify({key, value})
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ key, value })
     });
     return r.ok;
   } catch(_) { return false; }

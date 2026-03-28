@@ -1,0 +1,1333 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1.0,viewport-fit=cover"/>
+<title>Guerreiros Fitness — Vestuário de Elite</title>
+<meta name="description" content="Peças desenvolvidas para quem leva o corpo a sério. Poliamida de alta performance, corte atlético, acabamento premium."/>
+<meta name="theme-color" content="#050505"/>
+<meta property="og:title" content="Guerreiros Fitness"/>
+<meta property="og:description" content="Vista a sua melhor versão."/>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Barlow:ital,wght@0,300;0,400;0,500;0,600;1,300&display=swap" rel="stylesheet"/>
+<style>
+:root{
+  --gold:#D4A843;
+  --gold-light:#F0C060;
+  --black:#050505;
+  --dark:#0d0d0d;
+  --card:#111111;
+  --border:#1e1e1e;
+  --text:#e8e8e0;
+  --muted:#6b6b60;
+  --white:#fafaf5;
+}
+*{margin:0;padding:0;box-sizing:border-box;-webkit-tap-highlight-color:transparent}
+html{scroll-behavior:smooth}
+body{
+  background:var(--black);
+  color:var(--text);
+  font-family:'Barlow',sans-serif;
+  font-weight:400;
+  line-height:1.6;
+  overflow-x:hidden;
+}
+/* Grain overlay */
+body::before{
+  content:'';position:fixed;inset:0;
+  background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.035'/%3E%3C/svg%3E");
+  pointer-events:none;z-index:9999;opacity:.4;
+}
+/* Scrollbar */
+::-webkit-scrollbar{width:3px}
+::-webkit-scrollbar-track{background:var(--black)}
+::-webkit-scrollbar-thumb{background:var(--gold);border-radius:3px}
+
+/* ── Typography ── */
+.display{font-family:'Bebas Neue',sans-serif;letter-spacing:.03em;line-height:.95}
+h1,h2,h3{font-family:'Bebas Neue',sans-serif;letter-spacing:.03em}
+
+/* ── Header ── */
+#header{
+  position:fixed;top:0;left:0;right:0;z-index:100;
+  display:flex;align-items:center;justify-content:space-between;
+  padding:16px 24px;
+  background:rgba(5,5,5,0);
+  transition:background .4s,backdrop-filter .4s,border-color .4s;
+  border-bottom:1px solid transparent;
+}
+#header.scrolled{
+  background:rgba(5,5,5,.92);
+  backdrop-filter:blur(20px);
+  border-bottom-color:var(--border);
+}
+.logo{display:flex;align-items:center;gap:10px;text-decoration:none}
+.logo-icon{
+  width:38px;height:38px;border-radius:10px;
+  background:var(--gold);display:flex;align-items:center;justify-content:center;
+  font-size:20px;flex-shrink:0;
+}
+.logo-text{font-family:'Bebas Neue',sans-serif;font-size:22px;color:var(--white);letter-spacing:.08em}
+.logo-sub{font-size:9px;color:var(--muted);letter-spacing:.2em;text-transform:uppercase;margin-top:-2px}
+.cart-btn{
+  position:relative;
+  background:transparent;border:1px solid var(--gold);color:var(--gold);
+  padding:8px 18px;border-radius:50px;
+  font-family:'Barlow',sans-serif;font-size:13px;font-weight:600;
+  letter-spacing:.08em;text-transform:uppercase;cursor:pointer;
+  transition:all .25s;display:flex;align-items:center;gap:8px;
+}
+.cart-btn:hover{background:var(--gold);color:var(--black)}
+.cart-badge{
+  position:absolute;top:-7px;right:-7px;
+  width:18px;height:18px;border-radius:50%;
+  background:var(--gold);color:var(--black);
+  font-size:10px;font-weight:700;
+  display:none;align-items:center;justify-content:center;
+}
+.cart-badge.show{display:flex}
+
+/* ── Hero ── */
+#hero{
+  min-height:100vh;display:flex;flex-direction:column;
+  align-items:center;justify-content:center;
+  text-align:center;padding:120px 24px 80px;
+  position:relative;overflow:hidden;
+}
+.hero-bg{
+  position:absolute;inset:0;
+  background:
+    radial-gradient(ellipse 80% 60% at 50% 0%, rgba(212,168,67,.12) 0%, transparent 70%),
+    radial-gradient(ellipse 60% 40% at 20% 100%, rgba(212,168,67,.06) 0%, transparent 60%);
+}
+.hero-lines{
+  position:absolute;inset:0;
+  background-image:
+    repeating-linear-gradient(0deg,transparent,transparent 79px,rgba(212,168,67,.04) 80px),
+    repeating-linear-gradient(90deg,transparent,transparent 79px,rgba(212,168,67,.04) 80px);
+}
+.hero-eyebrow{
+  font-size:11px;font-weight:600;letter-spacing:.3em;text-transform:uppercase;
+  color:var(--gold);margin-bottom:24px;
+  display:flex;align-items:center;gap:12px;
+}
+.hero-eyebrow::before,.hero-eyebrow::after{content:'';flex:1;height:1px;background:linear-gradient(90deg,transparent,var(--gold),.4);max-width:60px}
+.hero-eyebrow::after{background:linear-gradient(90deg,rgba(212,168,67,.4),transparent)}
+.hero-title{
+  font-family:'Bebas Neue',sans-serif;
+  font-size:clamp(72px,14vw,160px);
+  line-height:.9;
+  color:var(--white);
+  margin-bottom:8px;
+}
+.hero-title span{color:var(--gold)}
+.hero-subtitle{
+  font-size:clamp(14px,2.5vw,20px);
+  font-weight:300;font-style:italic;
+  color:rgba(232,232,224,.6);
+  margin-bottom:48px;
+  max-width:480px;
+}
+.hero-cta{
+  display:inline-flex;align-items:center;gap:12px;
+  background:var(--gold);color:var(--black);
+  padding:16px 40px;border-radius:50px;
+  font-family:'Bebas Neue',sans-serif;font-size:18px;letter-spacing:.1em;
+  text-decoration:none;cursor:pointer;border:none;
+  transition:all .3s;box-shadow:0 0 40px rgba(212,168,67,.3);
+}
+.hero-cta:hover{transform:translateY(-2px);box-shadow:0 8px 50px rgba(212,168,67,.5)}
+.hero-stats{
+  display:flex;gap:48px;margin-top:72px;
+  flex-wrap:wrap;justify-content:center;
+}
+.stat-item{text-align:center}
+.stat-num{font-family:'Bebas Neue',sans-serif;font-size:42px;color:var(--gold)}
+.stat-label{font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:var(--muted)}
+.scroll-hint{
+  position:absolute;bottom:32px;left:50%;transform:translateX(-50%);
+  display:flex;flex-direction:column;align-items:center;gap:6px;
+  font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:var(--muted);
+}
+.scroll-line{width:1px;height:40px;background:linear-gradient(var(--gold),transparent);animation:scrollLine 1.5s ease-in-out infinite}
+@keyframes scrollLine{0%,100%{transform:scaleY(1);opacity:1}50%{transform:scaleY(0.5);opacity:.5}}
+
+/* ── Section ── */
+section{padding:80px 24px}
+.container{max-width:1100px;margin:0 auto}
+.section-label{
+  font-size:10px;letter-spacing:.35em;text-transform:uppercase;color:var(--gold);
+  margin-bottom:12px;display:block;
+}
+.section-title{
+  font-family:'Bebas Neue',sans-serif;
+  font-size:clamp(40px,7vw,72px);color:var(--white);
+  line-height:.95;margin-bottom:20px;
+}
+.section-body{
+  font-size:16px;color:rgba(232,232,224,.6);
+  max-width:520px;font-weight:300;line-height:1.8;
+}
+
+/* ── Story section ── */
+#story{background:var(--dark)}
+.story-grid{
+  display:grid;grid-template-columns:1fr 1fr;gap:80px;
+  align-items:center;
+}
+@media(max-width:768px){.story-grid{grid-template-columns:1fr;gap:40px}}
+.story-visual{
+  position:relative;aspect-ratio:4/5;
+  background:linear-gradient(135deg,var(--card),var(--dark));
+  border-radius:4px;border:1px solid var(--border);
+  overflow:hidden;display:flex;align-items:center;justify-content:center;
+}
+.story-emoji{font-size:120px;opacity:.15;position:absolute}
+.story-quote{
+  position:relative;z-index:1;padding:40px;text-align:center;
+}
+.story-quote blockquote{
+  font-family:'Bebas Neue',sans-serif;font-size:32px;
+  color:var(--white);line-height:1.1;margin-bottom:16px;
+}
+.story-quote cite{
+  font-size:12px;letter-spacing:.2em;text-transform:uppercase;
+  color:var(--gold);font-style:normal;
+}
+.story-features{margin-top:40px;display:flex;flex-direction:column;gap:20px}
+.feature-item{display:flex;gap:16px;align-items:flex-start}
+.feature-icon{
+  width:40px;height:40px;border-radius:8px;
+  background:rgba(212,168,67,.12);border:1px solid rgba(212,168,67,.25);
+  flex-shrink:0;display:flex;align-items:center;justify-content:center;
+  font-size:18px;
+}
+.feature-title{font-weight:600;font-size:15px;color:var(--white);margin-bottom:2px}
+.feature-desc{font-size:13px;color:var(--muted);font-weight:300}
+
+/* ── Products ── */
+#catalog{background:var(--black)}
+.catalog-header{
+  display:flex;align-items:flex-end;justify-content:space-between;
+  margin-bottom:48px;flex-wrap:wrap;gap:20px;
+}
+.filter-btns{display:flex;gap:8px;flex-wrap:wrap}
+.filter-btn{
+  padding:8px 18px;border-radius:50px;font-size:12px;font-weight:600;
+  letter-spacing:.06em;text-transform:uppercase;cursor:pointer;
+  border:1px solid var(--border);background:transparent;color:var(--muted);
+  transition:all .2s;font-family:'Barlow',sans-serif;
+}
+.filter-btn:hover,.filter-btn.active{border-color:var(--gold);color:var(--gold);background:rgba(212,168,67,.08)}
+.products-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fill,minmax(290px,1fr));
+  gap:2px;
+}
+/* Product card */
+.product-card{
+  background:var(--card);
+  position:relative;overflow:hidden;
+  cursor:pointer;transition:transform .3s;
+}
+.product-card:hover{transform:scale(1.01);z-index:1}
+.product-thumb{
+  aspect-ratio:3/4;
+  display:flex;align-items:center;justify-content:center;
+  position:relative;overflow:hidden;
+}
+.product-emoji{
+  font-size:100px;
+  transition:transform .4s cubic-bezier(0.34,1.56,0.64,1);
+  position:relative;z-index:1;
+}
+.product-card:hover .product-emoji{transform:scale(1.15) rotate(-5deg)}
+.product-glow{
+  position:absolute;inset:0;opacity:0;transition:opacity .3s;
+  background:radial-gradient(ellipse at center,rgba(212,168,67,.15),transparent 70%);
+}
+.product-card:hover .product-glow{opacity:1}
+.badge-tag{
+  position:absolute;top:16px;left:16px;
+  font-size:9px;font-weight:700;letter-spacing:.15em;text-transform:uppercase;
+  padding:5px 12px;border-radius:50px;z-index:2;
+}
+.badge-hot{background:rgba(212,168,67,.2);border:1px solid var(--gold);color:var(--gold)}
+.badge-low{background:rgba(239,68,68,.15);border:1px solid rgba(239,68,68,.5);color:#f87171}
+.badge-out{background:rgba(0,0,0,.6);border:1px solid #333;color:#555}
+.product-info{padding:20px}
+.product-code{font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:var(--muted);margin-bottom:4px}
+.product-name{font-family:'Bebas Neue',sans-serif;font-size:22px;color:var(--white);line-height:1}
+.product-color{font-size:13px;color:var(--muted);font-weight:300;margin-bottom:12px}
+.product-material{font-size:11px;color:rgba(212,168,67,.7);letter-spacing:.05em;margin-bottom:16px}
+.size-row{display:flex;gap:6px;margin-bottom:16px;flex-wrap:wrap}
+.size-chip{
+  width:34px;height:30px;border-radius:6px;
+  border:1px solid var(--border);background:transparent;
+  font-size:11px;font-weight:600;color:var(--muted);
+  cursor:pointer;transition:all .15s;font-family:'Barlow',sans-serif;
+  display:flex;align-items:center;justify-content:center;
+}
+.size-chip:hover:not(.out){border-color:var(--gold);color:var(--gold)}
+.size-chip.selected{background:var(--gold);border-color:var(--gold);color:var(--black)}
+.size-chip.out{opacity:.3;cursor:not-allowed;text-decoration:line-through}
+.price-row{display:flex;align-items:center;justify-content:space-between}
+.price{font-family:'Bebas Neue',sans-serif;font-size:28px;color:var(--gold)}
+.price-installments{font-size:11px;color:var(--muted);margin-top:-4px}
+.add-btn{
+  background:var(--gold);color:var(--black);
+  border:none;border-radius:8px;
+  padding:10px 18px;font-family:'Bebas Neue',sans-serif;font-size:15px;letter-spacing:.05em;
+  cursor:pointer;transition:all .2s;flex-shrink:0;
+}
+.add-btn:hover{background:var(--gold-light);transform:scale(1.03)}
+.add-btn:disabled{background:#2a2a1e;color:#4a4a30;cursor:not-allowed;transform:none}
+.supplier-link{
+  display:inline-flex;align-items:center;gap:4px;
+  font-size:11px;color:rgba(212,168,67,.7);text-decoration:none;
+  letter-spacing:.04em;margin-bottom:10px;
+  transition:color .2s;
+}
+.supplier-link:hover{color:var(--gold)}
+.stock-indicator{
+  display:flex;align-items:center;gap:6px;
+  font-size:11px;margin-bottom:8px;
+}
+.stock-dot{width:6px;height:6px;border-radius:50%;flex-shrink:0}
+
+/* ── Community ── */
+#community{
+  background:var(--dark);
+  text-align:center;padding:100px 24px;
+  position:relative;overflow:hidden;
+}
+#community::before{
+  content:'';position:absolute;inset:0;
+  background:radial-gradient(ellipse 100% 70% at 50% 100%,rgba(212,168,67,.08),transparent);
+}
+.community-title{
+  font-family:'Bebas Neue',sans-serif;
+  font-size:clamp(48px,10vw,96px);
+  color:var(--white);line-height:.9;margin-bottom:24px;
+}
+.community-title span{
+  -webkit-text-stroke:1px var(--gold);color:transparent;
+}
+.community-body{
+  font-size:17px;color:rgba(232,232,224,.55);
+  font-weight:300;font-style:italic;
+  max-width:540px;margin:0 auto 48px;line-height:1.8;
+}
+.perks{display:flex;gap:24px;justify-content:center;flex-wrap:wrap;max-width:800px;margin:0 auto}
+.perk{
+  flex:1;min-width:180px;max-width:220px;
+  background:var(--card);border:1px solid var(--border);
+  border-radius:4px;padding:28px 20px;text-align:center;
+  transition:border-color .3s;
+}
+.perk:hover{border-color:rgba(212,168,67,.4)}
+.perk-icon{font-size:32px;margin-bottom:12px}
+.perk-title{font-family:'Bebas Neue',sans-serif;font-size:20px;color:var(--white);margin-bottom:6px}
+.perk-desc{font-size:12px;color:var(--muted);font-weight:300;line-height:1.6}
+
+/* ── Testimonials ── */
+#testimonials{background:var(--black);padding:80px 24px}
+.testimonials-grid{
+  display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));
+  gap:16px;margin-top:48px;
+}
+.testimonial{
+  background:var(--card);border:1px solid var(--border);
+  border-radius:4px;padding:28px;
+  transition:border-color .3s;
+}
+.testimonial:hover{border-color:rgba(212,168,67,.3)}
+.stars{color:var(--gold);font-size:13px;margin-bottom:12px;letter-spacing:2px}
+.testimonial-text{
+  font-size:14px;line-height:1.7;color:rgba(232,232,224,.75);
+  font-weight:300;font-style:italic;margin-bottom:16px;
+}
+.testimonial-author{display:flex;align-items:center;gap:10px}
+.author-avatar{
+  width:36px;height:36px;border-radius:50%;
+  background:rgba(212,168,67,.15);border:1px solid rgba(212,168,67,.3);
+  display:flex;align-items:center;justify-content:center;
+  font-family:'Bebas Neue',sans-serif;font-size:15px;color:var(--gold);
+  flex-shrink:0;
+}
+.author-name{font-weight:600;font-size:13px;color:var(--white)}
+.author-detail{font-size:11px;color:var(--muted)}
+
+/* ── Footer ── */
+footer{
+  background:var(--dark);border-top:1px solid var(--border);
+  padding:60px 24px 40px;text-align:center;
+}
+.footer-logo{font-family:'Bebas Neue',sans-serif;font-size:32px;color:var(--gold);letter-spacing:.1em;margin-bottom:8px}
+.footer-tagline{font-size:12px;letter-spacing:.25em;text-transform:uppercase;color:var(--muted);margin-bottom:32px}
+.footer-links{display:flex;gap:24px;justify-content:center;flex-wrap:wrap;margin-bottom:32px}
+.footer-link{font-size:13px;color:var(--muted);text-decoration:none;letter-spacing:.05em;transition:color .2s}
+.footer-link:hover{color:var(--gold)}
+.footer-copy{font-size:11px;color:rgba(107,107,96,.5)}
+.whatsapp-btn{
+  position:fixed;bottom:24px;right:24px;z-index:50;
+  width:54px;height:54px;border-radius:50%;
+  background:#25D366;display:flex;align-items:center;justify-content:center;
+  font-size:26px;text-decoration:none;box-shadow:0 4px 20px rgba(37,211,102,.4);
+  transition:transform .25s,box-shadow .25s;
+}
+.whatsapp-btn:hover{transform:scale(1.1);box-shadow:0 8px 30px rgba(37,211,102,.6)}
+
+/* ── Cart sidebar ── */
+#cart-overlay{
+  position:fixed;inset:0;background:rgba(0,0,0,0);z-index:200;
+  pointer-events:none;transition:background .3s;
+}
+#cart-overlay.open{background:rgba(0,0,0,.65);pointer-events:all}
+#cart-panel{
+  position:absolute;top:0;right:0;bottom:0;width:100%;max-width:440px;
+  background:var(--dark);border-left:1px solid var(--border);
+  transform:translateX(100%);transition:transform .35s cubic-bezier(0.4,0,0.2,1);
+  display:flex;flex-direction:column;overflow:hidden;
+}
+#cart-overlay.open #cart-panel{transform:translateX(0)}
+.cart-header{
+  padding:24px;border-bottom:1px solid var(--border);
+  display:flex;align-items:center;justify-content:space-between;flex-shrink:0;
+}
+.cart-title{font-family:'Bebas Neue',sans-serif;font-size:26px;color:var(--white);letter-spacing:.05em}
+.close-btn{
+  background:transparent;border:1px solid var(--border);color:var(--muted);
+  width:36px;height:36px;border-radius:50%;cursor:pointer;font-size:18px;
+  display:flex;align-items:center;justify-content:center;transition:all .2s;
+}
+.close-btn:hover{border-color:var(--gold);color:var(--gold)}
+#cart-items{flex:1;overflow-y:auto;padding:16px}
+.cart-empty{
+  height:100%;display:flex;flex-direction:column;align-items:center;
+  justify-content:center;gap:12px;color:var(--muted);text-align:center;
+}
+.cart-empty-icon{font-size:48px;opacity:.3}
+.cart-empty-title{font-family:'Bebas Neue',sans-serif;font-size:24px;color:rgba(232,232,224,.3)}
+.cart-item{
+  display:flex;gap:14px;padding:14px;
+  background:var(--card);border-radius:8px;margin-bottom:8px;
+  border:1px solid var(--border);
+}
+.cart-item-thumb{
+  width:60px;height:70px;border-radius:6px;flex-shrink:0;
+  display:flex;align-items:center;justify-content:center;font-size:28px;
+}
+.cart-item-info{flex:1;min-width:0}
+.cart-item-name{font-family:'Bebas Neue',sans-serif;font-size:16px;color:var(--white);line-height:1.1}
+.cart-item-detail{font-size:12px;color:var(--muted);margin-top:2px}
+.cart-item-price{font-family:'Bebas Neue',sans-serif;font-size:20px;color:var(--gold)}
+.cart-item-remove{
+  background:transparent;border:none;color:rgba(107,107,96,.5);
+  cursor:pointer;font-size:16px;padding:2px;align-self:flex-start;
+  transition:color .2s;line-height:1;
+}
+.cart-item-remove:hover{color:#f87171}
+.cart-footer{padding:20px;border-top:1px solid var(--border);flex-shrink:0}
+.cart-total-row{
+  display:flex;justify-content:space-between;align-items:center;margin-bottom:16px;
+}
+.cart-total-label{font-size:13px;letter-spacing:.1em;text-transform:uppercase;color:var(--muted)}
+.cart-total-value{font-family:'Bebas Neue',sans-serif;font-size:32px;color:var(--gold)}
+.checkout-btn{
+  width:100%;background:var(--gold);color:var(--black);border:none;
+  padding:16px;border-radius:8px;
+  font-family:'Bebas Neue',sans-serif;font-size:20px;letter-spacing:.1em;
+  cursor:pointer;transition:all .25s;
+}
+.checkout-btn:hover{background:var(--gold-light);transform:translateY(-1px)}
+
+/* ── Checkout modal ── */
+#checkout-modal{
+  position:fixed;inset:0;z-index:300;
+  display:none;align-items:center;justify-content:center;
+  padding:20px;background:rgba(0,0,0,.8);
+}
+#checkout-modal.open{display:flex}
+.modal-box{
+  background:var(--dark);border:1px solid var(--border);border-radius:12px;
+  width:100%;max-width:480px;max-height:90vh;overflow-y:auto;
+}
+.modal-header{
+  padding:24px 24px 0;
+  display:flex;align-items:center;justify-content:space-between;
+}
+.modal-title{font-family:'Bebas Neue',sans-serif;font-size:28px;color:var(--white)}
+.modal-body{padding:24px}
+.field{margin-bottom:16px}
+.field label{display:block;font-size:11px;letter-spacing:.15em;text-transform:uppercase;color:var(--muted);margin-bottom:7px}
+.field input,.field select{
+  width:100%;background:var(--card);border:1px solid var(--border);
+  color:var(--white);font-family:'Barlow',sans-serif;font-size:15px;
+  padding:12px 16px;border-radius:8px;outline:none;transition:border-color .2s;
+  appearance:none;-webkit-appearance:none;
+}
+.field input::placeholder{color:var(--muted)}
+.field input:focus,.field select:focus{border-color:var(--gold)}
+.field select option{background:var(--card);color:var(--white)}
+.pay-options{display:grid;grid-template-columns:1fr 1fr;gap:8px}
+.pay-opt{
+  background:var(--card);border:1px solid var(--border);
+  border-radius:8px;padding:12px;text-align:center;cursor:pointer;
+  font-size:13px;font-weight:500;color:var(--muted);transition:all .2s;
+}
+.pay-opt:hover,.pay-opt.selected{border-color:var(--gold);color:var(--gold);background:rgba(212,168,67,.08)}
+.order-summary{
+  background:var(--card);border:1px solid var(--border);
+  border-radius:8px;padding:16px;margin-bottom:20px;
+}
+.order-row{display:flex;justify-content:space-between;font-size:13px;margin-bottom:6px}
+.order-row.total{
+  padding-top:10px;border-top:1px solid var(--border);margin-top:8px;
+  font-family:'Bebas Neue',sans-serif;font-size:22px;color:var(--gold);
+}
+.confirm-btn{
+  width:100%;background:var(--gold);color:var(--black);border:none;
+  padding:16px;border-radius:8px;
+  font-family:'Bebas Neue',sans-serif;font-size:20px;letter-spacing:.1em;
+  cursor:pointer;transition:all .25s;margin-top:4px;
+}
+.confirm-btn:hover{background:var(--gold-light)}
+
+/* ── Success screen ── */
+#success-modal{
+  position:fixed;inset:0;z-index:400;
+  display:none;align-items:center;justify-content:center;
+  padding:20px;background:rgba(0,0,0,.9);
+}
+#success-modal.open{display:flex}
+.success-box{
+  background:var(--dark);border:1px solid rgba(212,168,67,.3);border-radius:12px;
+  width:100%;max-width:420px;padding:48px 36px;text-align:center;
+}
+.success-icon{font-size:64px;margin-bottom:20px}
+.success-title{font-family:'Bebas Neue',sans-serif;font-size:42px;color:var(--gold);margin-bottom:8px}
+.success-subtitle{font-size:15px;color:rgba(232,232,224,.6);font-weight:300;line-height:1.7;margin-bottom:32px}
+.success-btn{
+  display:inline-block;background:transparent;border:1px solid var(--gold);color:var(--gold);
+  padding:12px 32px;border-radius:50px;font-family:'Bebas Neue',sans-serif;font-size:17px;
+  letter-spacing:.08em;cursor:pointer;transition:all .25s;
+}
+.success-btn:hover{background:var(--gold);color:var(--black)}
+
+/* ── Divider ── */
+.divider{height:1px;background:linear-gradient(90deg,transparent,var(--border),transparent);margin:0}
+
+/* ── Animations ── */
+@keyframes fadeUp{from{opacity:0;transform:translateY(24px)}to{opacity:1;transform:translateY(0)}}
+.fade-up{opacity:0;animation:fadeUp .7s ease forwards}
+.delay-1{animation-delay:.1s}
+.delay-2{animation-delay:.2s}
+.delay-3{animation-delay:.35s}
+.delay-4{animation-delay:.5s}
+
+/* ── Responsive ── */
+@media(max-width:600px){
+  #hero{padding:100px 20px 60px}
+  .hero-stats{gap:32px}
+  .stat-num{font-size:32px}
+  section{padding:60px 20px}
+  #cart-panel{max-width:100%}
+}
+</style>
+</head>
+<body>
+
+<!-- ── WhatsApp ── -->
+<a href="https://wa.me/5586998097010?text=Olá! Vi o catálogo Guerreiros e quero saber mais 👕" target="_blank" class="whatsapp-btn" title="Fale conosco no WhatsApp">💬</a>
+
+<!-- ── Header ── -->
+<header id="header">
+  <a href="#" class="logo">
+    <div class="logo-icon">👕</div>
+    <div>
+      <div class="logo-text">Guerreiros</div>
+      <div class="logo-sub">Vista-se Bem</div>
+    </div>
+  </a>
+  <button class="cart-btn" onclick="openCart()">
+    <span>🛍</span> Carrinho
+    <span class="cart-badge" id="cartBadge">0</span>
+  </button>
+</header>
+
+<!-- ── Hero ── -->
+<section id="hero">
+  <div class="hero-bg"></div>
+  <div class="hero-lines"></div>
+  <div class="hero-eyebrow fade-up">Vista a sua melhor versão</div>
+  <h1 class="hero-title fade-up delay-1">VISTA <span>COMO</span><br>ATLETA</h1>
+  <p class="hero-subtitle fade-up delay-2">Peças desenvolvidas para quem leva o corpo a sério. Performance no treino. Estilo fora dele.</p>
+  <button class="hero-cta fade-up delay-3" onclick="document.getElementById('catalog').scrollIntoView({behavior:'smooth'})">
+    ▸ Ver Coleção
+  </button>
+  <div class="hero-stats fade-up delay-4">
+    <div class="stat-item"><div class="stat-num">500+</div><div class="stat-label">Atletas vestidos</div></div>
+    <div class="stat-item"><div class="stat-num">3</div><div class="stat-label">Anos de história</div></div>
+    <div class="stat-item"><div class="stat-num">100%</div><div class="stat-label">Satisfação garantida</div></div>
+  </div>
+  <div class="scroll-hint">
+    <span>Explorar</span>
+    <div class="scroll-line"></div>
+  </div>
+</section>
+
+<!-- ── Story ── -->
+<section id="story">
+  <div class="container">
+    <div class="story-grid">
+      <div class="story-visual">
+        <span class="story-emoji">🏋️</span>
+        <div class="story-quote">
+          <blockquote>"O treino começa quando você veste a peça certa."</blockquote>
+          <cite>— Fundador, Guerreiros Fitness</cite>
+        </div>
+      </div>
+      <div>
+        <span class="section-label">Nossa história</span>
+        <h2 class="section-title">CRIADO POR<br>QUEM VIVE<br><span style="color:var(--gold)">O ESPORTE</span></h2>
+        <p class="section-body">A Guerreiros nasceu de uma insatisfação: as roupas de academia ou eram desconfortáveis, ou eram caras demais, ou não duravam nada. Criamos uma alternativa: poliamida de alta compressão, corte atlético inteligente e acabamento que resiste a centenas de lavagens.</p>
+        <div class="story-features">
+          <div class="feature-item">
+            <div class="feature-icon">💧</div>
+            <div>
+              <div class="feature-title">Secagem Ultra-rápida</div>
+              <div class="feature-desc">Tecido de alta performance que elimina o suor em segundos, mantendo você seco e focado no treino.</div>
+            </div>
+          </div>
+          <div class="feature-item">
+            <div class="feature-icon">🔒</div>
+            <div>
+              <div class="feature-title">Compressão Inteligente</div>
+              <div class="feature-desc">Suporte muscular sem apertar, liberdade de movimento completa em qualquer exercício.</div>
+            </div>
+          </div>
+          <div class="feature-item">
+            <div class="feature-icon">♻️</div>
+            <div>
+              <div class="feature-title">Durabilidade Superior</div>
+              <div class="feature-desc">Poliamida premium que mantém forma, cor e elasticidade mesmo após centenas de lavagens.</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- ── Catalog ── -->
+<section id="catalog">
+  <div class="container">
+    <div class="catalog-header">
+      <div>
+        <span class="section-label">Coleção Atual</span>
+        <h2 class="section-title" style="margin-bottom:0">ESCOLHA O<br>SEU MODELO</h2>
+      </div>
+      <div class="filter-btns">
+        <button class="filter-btn active" onclick="filterProducts('all',this)">Todos</button>
+        <button class="filter-btn" onclick="filterProducts('Camisa',this)">Camisas</button>
+        <button class="filter-btn" onclick="filterProducts('Bermuda',this)">Bermudas</button>
+      </div>
+    </div>
+    <div class="products-grid" id="productsGrid"></div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- ── Community ── -->
+<section id="community">
+  <div class="container" style="position:relative;z-index:1">
+    <span class="section-label" style="display:block;text-align:center;margin-bottom:16px">Faça parte</span>
+    <h2 class="community-title">MAIS DO QUE<br>UMA ROUPA.<br><span>UM ESTILO</span><br>DE VIDA.</h2>
+    <p class="community-body">Cada peça Guerreiros é um compromisso com você mesmo. Com o seu processo. Com a sua evolução. Quem veste Guerreiros não está apenas treinando — está construindo a melhor versão de si.</p>
+    <div class="perks">
+      <div class="perk">
+        <div class="perk-icon">🚀</div>
+        <div class="perk-title">Entrega Rápida</div>
+        <div class="perk-desc">Retirada em loja ou entrega expressa em Maceió e região</div>
+      </div>
+      <div class="perk">
+        <div class="perk-icon">🔄</div>
+        <div class="perk-title">Troca Garantida</div>
+        <div class="perk-desc">Não ficou bom? Troca sem burocracia. Só fale com a gente.</div>
+      </div>
+      <div class="perk">
+        <div class="perk-icon">💬</div>
+        <div class="perk-title">Suporte Humano</div>
+        <div class="perk-desc">Atendimento via WhatsApp com resposta em minutos</div>
+      </div>
+      <div class="perk">
+        <div class="perk-icon">⭐</div>
+        <div class="perk-title">Clientes VIP</div>
+        <div class="perk-desc">Compradores frequentes ganham acesso antecipado a novidades</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- ── Testimonials ── -->
+<section id="testimonials">
+  <div class="container">
+    <span class="section-label">Quem já vestiu</span>
+    <h2 class="section-title">O QUE NOSSOS<br>CLIENTES DIZEM</h2>
+    <div class="testimonials-grid">
+      <div class="testimonial">
+        <div class="stars">★★★★★</div>
+        <p class="testimonial-text">"Comprei a camisa preta de poliamida e não largo mais. Usei por 6 meses quase todos os dias na academia e parece nova. Vale muito cada centavo."</p>
+        <div class="testimonial-author">
+          <div class="author-avatar">RB</div>
+          <div>
+            <div class="author-name">Rafael B.</div>
+            <div class="author-detail">Personal Trainer · Maceió</div>
+          </div>
+        </div>
+      </div>
+      <div class="testimonial">
+        <div class="stars">★★★★★</div>
+        <p class="testimonial-text">"A camisa mescla azul marinho é perfeita. Caimento excelente, não pesa no treino e ainda fica ótima fora da academia. Já comprei 3 cores."</p>
+        <div class="testimonial-author">
+          <div class="author-avatar">MS</div>
+          <div>
+            <div class="author-name">Marcos S.</div>
+            <div class="author-detail">Atleta amador · Alagoas</div>
+          </div>
+        </div>
+      </div>
+      <div class="testimonial">
+        <div class="stars">★★★★★</div>
+        <p class="testimonial-text">"Cheguei por indicação de um amigo e fiquei impressionada com a qualidade. A bermuda chumbo tem um caimento impecável. Atendimento pelo WhatsApp foi rapidíssimo!"</p>
+        <div class="testimonial-author">
+          <div class="author-avatar">CL</div>
+          <div>
+            <div class="author-name">Camila L.</div>
+            <div class="author-detail">Instrutora de spinning</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- ── Footer ── -->
+<footer>
+  <div class="footer-logo">GUERREIROS</div>
+  <div class="footer-tagline">Vista-se Bem · Alagoas</div>
+  <div class="footer-links">
+    <a href="https://wa.me/5586998097010999" class="footer-link" target="_blank">WhatsApp</a>
+    <a href="#catalog" class="footer-link">Catálogo</a>
+    <a href="#story" class="footer-link">Nossa História</a>
+    <a href="#community" class="footer-link">Comunidade</a>
+  </div>
+  <p class="footer-copy">© 2025 Guerreiros Fitness. Todos os direitos reservados. · guerreirosvistasebem.com.br</p>
+</footer>
+
+<!-- ── Cart sidebar ── -->
+<div id="cart-overlay" onclick="handleOverlayClick(event)">
+  <div id="cart-panel">
+    <div class="cart-header">
+      <div class="cart-title">Seu Carrinho</div>
+      <button class="close-btn" onclick="closeCart()">✕</button>
+    </div>
+    <div id="cart-items">
+      <div class="cart-empty" id="cartEmpty">
+        <div class="cart-empty-icon">🛍️</div>
+        <div class="cart-empty-title">Carrinho vazio</div>
+        <p style="font-size:13px;color:var(--muted)">Adicione produtos para continuar</p>
+      </div>
+    </div>
+    <div class="cart-footer" id="cartFooter" style="display:none">
+      <div class="cart-total-row">
+        <span class="cart-total-label">Total</span>
+        <span class="cart-total-value" id="cartTotal">R$ 0,00</span>
+      </div>
+      <button class="checkout-btn" onclick="openCheckout()">▸ Finalizar Pedido</button>
+    </div>
+  </div>
+</div>
+
+<!-- ── Checkout modal ── -->
+<div id="checkout-modal">
+  <div class="modal-box">
+    <div class="modal-header">
+      <div class="modal-title">Finalizar Pedido</div>
+      <button class="close-btn" onclick="closeCheckout()">✕</button>
+    </div>
+    <div class="modal-body">
+      <div class="order-summary" id="orderSummary"></div>
+      <div class="field">
+        <label>Seu nome completo</label>
+        <input type="text" id="custName" placeholder="Como você se chama?"/>
+      </div>
+      <div class="field">
+        <label>WhatsApp / Telefone</label>
+        <input type="tel" id="custPhone" placeholder="(82) 9 0000-0000"/>
+      </div>
+      <!-- Entrega -->
+      <div class="field">
+        <label>Forma de entrega</label>
+        <div class="pay-options">
+          <div class="pay-opt selected" data-delivery="retirada" onclick="selectDelivery(this)">🏪 Retirar na loja</div>
+          <div class="pay-opt" data-delivery="entrega" onclick="selectDelivery(this)">🚚 Entrega (+R$10)</div>
+        </div>
+      </div>
+      <div id="delivery-fields" style="display:none">
+        <div class="field">
+          <label>Rua e número</label>
+          <input type="text" id="deliveryStreet" placeholder="Ex: Rua das Flores, 123"/>
+        </div>
+        <div class="field">
+          <label>Bairro</label>
+          <input type="text" id="deliveryNeighborhood" placeholder="Ex: Centro"/>
+        </div>
+        <div class="field">
+          <label>Complemento (opcional)</label>
+          <input type="text" id="deliveryComplement" placeholder="Ex: Apto 2, casa dos fundos"/>
+        </div>
+      </div>
+      <!-- Pagamento -->
+      <div class="field">
+        <label>Forma de pagamento</label>
+        <div class="pay-options" id="payOptions">
+          <div class="pay-opt selected" data-pay="pix" onclick="selectPay(this)">💠 PIX</div>
+          <div class="pay-opt" data-pay="dinheiro" onclick="selectPay(this)">💵 Dinheiro</div>
+          <div class="pay-opt" data-pay="débito" onclick="selectPay(this)">💳 Débito</div>
+          <div class="pay-opt" data-pay="crédito" onclick="selectPay(this)">💎 Crédito</div>
+        </div>
+      </div>
+      <!-- Campos cartão -->
+      <div id="card-fields" style="display:none">
+        <div class="field">
+          <label>Nome no cartão</label>
+          <input type="text" id="cardName" placeholder="Como aparece no cartão"/>
+        </div>
+        <div class="field">
+          <label>Número do cartão</label>
+          <input type="text" id="cardNumber" placeholder="0000 0000 0000 0000" maxlength="19" oninput="fmtCard(this)"/>
+        </div>
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px">
+          <div class="field">
+            <label>Validade</label>
+            <input type="text" id="cardExpiry" placeholder="MM/AA" maxlength="5" oninput="fmtExpiry(this)"/>
+          </div>
+          <div class="field">
+            <label>CVV</label>
+            <input type="text" id="cardCVV" placeholder="123" maxlength="4"/>
+          </div>
+        </div>
+      </div>
+      <div id="pix-info" style="background:rgba(212,168,67,.08);border:1px solid rgba(212,168,67,.25);border-radius:8px;padding:14px;margin-bottom:16px;font-size:13px;color:rgba(232,232,224,.7);line-height:1.6">
+        <strong style="color:var(--gold)">PIX:</strong> Chave — <strong style="color:var(--white)"><a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="86ebf3f4efeae9eee3e8f4eff7f3e3b7b0b1b5c6e1ebe7efeaa8e5e9eb">[email&#160;protected]</a></strong><br/>
+        <span style="font-size:11px">Envie o comprovante via WhatsApp após o pedido</span>
+      </div>
+      <button class="confirm-btn" onclick="confirmOrder()">🏆 Confirmar Pedido</button>
+    </div>
+  </div>
+</div>
+
+<!-- ── Success modal ── -->
+<div id="success-modal">
+  <div class="success-box">
+    <div class="success-icon">🏆</div>
+    <div class="success-title">PEDIDO FEITO!</div>
+    <div class="success-subtitle" id="successMsg">Seu pedido foi registrado com sucesso.<br/>Entraremos em contato para confirmar a entrega.</div>
+    <button class="success-btn" onclick="closeSuccess()">Continuar comprando</button>
+  </div>
+</div>
+
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+// ── Cloud DB API ──────────────────────────────────────────────────────────────
+const API_BASE="/api/db";
+async function cloudGet(key){try{const r=await fetch(`${API_BASE}?key=${key}`);if(!r.ok)return null;const d=await r.json();return d.value;}catch(_){return null;}}
+async function cloudSet(key,value){try{const r=await fetch(API_BASE,{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify({key,value})});return r.ok;}catch(_){return false;}}
+
+// ── Dados padrão dos produtos ─────────────────────────────────────────────────
+const DEFAULT_PRODUCTS=[
+  {id:"MBL18",code:"MBL18",name:"Camisa Poliamida Lisa",color:"Preto",category:"Camisa",colorHex:"#1a1a2e",price:89.90,cost:44.00,sizes:["P","M","G","GG"],material:"91% Poliamida · 9% Elastano",active:true},
+  {id:"MBL5", code:"MBL5", name:"Camisa Poliamida Mescla",color:"Preto Mescla",category:"Camisa",colorHex:"#3a3a3a",price:99.90,cost:49.00,sizes:["P","M","G"],material:"96% Poliamida · 4% Elastano",active:true},
+  {id:"MBL4", code:"MBL4", name:"Camisa Poliamida Mescla",color:"Azul Marinho",category:"Camisa",colorHex:"#1a3a6b",price:99.90,cost:49.00,sizes:["P","M","G"],material:"96% Poliamida · 4% Elastano",active:true},
+  {id:"MBL3", code:"MBL3", name:"Camisa Poliamida Mescla",color:"Grafite",category:"Camisa",colorHex:"#5a5a5a",price:99.90,cost:49.00,sizes:["P","M","G"],material:"96% Poliamida · 4% Elastano",active:true},
+  {id:"MBL10",code:"MBL10",name:"Camisa Modal",color:"Verde Bandeira",category:"Camisa",colorHex:"#004d00",price:99.90,cost:49.00,sizes:["P","M","G"],material:"96% Modal · 4% Elastano",active:true},
+  {id:"MBL11",code:"MBL11",name:"Camisa Modal",color:"Vermelho",category:"Camisa",colorHex:"#7f0000",price:99.90,cost:49.00,sizes:["P","M","G"],material:"96% Modal · 4% Elastano",active:true},
+  {id:"MSH2", code:"MSH2", name:"Bermuda com Elástico",color:"Chumbo",category:"Bermuda",colorHex:"#4a4a4a",price:89.90,cost:44.00,sizes:["P","M","G","GG"],material:"Poliamida · Elastano",active:true},
+];
+// PRODUCTS é carregado do banco de dados (ver init abaixo)
+let PRODUCTS=JSON.parse(localStorage.getItem('s24_products')||'null')||DEFAULT_PRODUCTS;
+PRODUCTS=PRODUCTS.filter(p=>p.active!==false);
+
+const fmt=n=>new Intl.NumberFormat("pt-BR",{style:"currency",currency:"BRL"}).format(n||0);
+const today=()=>new Date().toISOString().split("T")[0];
+
+// ── localStorage helpers ──────────────────────────────────────────────────────
+const load=(k,d=null)=>{try{const r=localStorage.getItem(k);return r?JSON.parse(r):d}catch(_){return d}};
+const save=(k,v)=>{try{localStorage.setItem(k,JSON.stringify(v))}catch(_){}};
+
+// ── State ─────────────────────────────────────────────────────────────────────
+let cart=[];
+let inventory={};
+let selectedSizes={};
+let currentFilter='all';
+let selectedPayMethod='pix';
+let selectedDelivery='retirada';
+
+// ── Card formatting helpers ───────────────────────────────────────────────────
+function fmtCard(el){el.value=el.value.replace(/\D/g,'').replace(/(.{4})/g,'$1 ').trim();}
+function fmtExpiry(el){el.value=el.value.replace(/\D/g,'').replace(/^(.{2})(.+)/,'$1/$2');}
+
+// ── Load inventory from management system ─────────────────────────────────────
+function loadInventory(){
+  inventory=load('s24_inv',{});
+}
+
+// ── Get available stock for a product+size ───────────────────────────────────
+function getStock(pid,sz){
+  const inv=inventory[pid]||{};
+  return inv[sz]||0;
+}
+
+function getTotalStock(pid){
+  const p=PRODUCTS.find(x=>x.id===pid);
+  const inv=inventory[pid]||{};
+  return p.sizes.reduce((a,sz)=>a+(inv[sz]||0),0);
+}
+
+// ── Render products ──────────────────────────────────────────────────────────
+function renderProducts(filter='all'){
+  loadInventory();
+  const grid=document.getElementById('productsGrid');
+  const filtered=filter==='all'?PRODUCTS:PRODUCTS.filter(p=>p.category===filter);
+  grid.innerHTML='';
+  filtered.forEach(p=>{
+    const totalStock=getTotalStock(p.id);
+    const emoji=p.category==='Bermuda'?'🩳':'👕';
+    const inCart=cart.filter(c=>c.productId===p.id).reduce((a,c)=>a+c.quantity,0);
+    const hasSomeStock=p.sizes.some(sz=>getStock(p.id,sz)>0);
+    const isLow=hasSomeStock&&p.sizes.some(sz=>{const s=getStock(p.id,sz);return s>0&&s<=3;});
+
+    let badgeHTML='';
+    if(!hasSomeStock)badgeHTML=`<div class="badge-tag badge-out">Esgotado</div>`;
+    else if(isLow)badgeHTML=`<div class="badge-tag badge-low">⚡ Últimas peças</div>`;
+    else badgeHTML=`<div class="badge-tag badge-hot">✦ Disponível</div>`;
+
+    const selectedSz=selectedSizes[p.id]||'';
+    const selectedSzStock=selectedSz?getStock(p.id,selectedSz):0;
+    const cartQtyForSz=selectedSz?cart.filter(c=>c.productId===p.id&&c.size===selectedSz).reduce((a,c)=>a+c.quantity,0):0;
+    const canAdd=selectedSz&&(selectedSzStock-cartQtyForSz)>0;
+
+    const sizesHTML=p.sizes.map(sz=>{
+      const st=getStock(p.id,sz);
+      const cq=cart.filter(c=>c.productId===p.id&&c.size===sz).reduce((a,c)=>a+c.quantity,0);
+      const avail=st-cq;
+      const out=avail<=0;
+      const oc = out ? '' : "selectSize('" + p.id + "','" + sz + "')";
+      const ttl = out ? 'Sem estoque' : avail + ' disponível' + (avail!==1?'s':'');
+      const sup = (!out&&avail<=2) ? '<sup style="font-size:8px;color:#f87171">!</sup>' : '';
+      return '<button class="size-chip'+(out?' out':'')+(sz===selectedSz?' selected':'')+'" onclick="'+oc+'" title="'+ttl+'">'+sz+sup+'</button>';
+    }).join('');
+
+    const supplierUrls={
+      'MBL18':'https://www.studio24fitness.com.br/pre-venda-camisa-poliamida-lisa-preto/',
+      'MBL5':'https://www.studio24fitness.com.br/camisa-poliamida-mescla-preto/',
+      'MBL4':'https://www.studio24fitness.com.br/camisa-poliamida-mescla-azul-marinho/',
+      'MBL3':'https://www.studio24fitness.com.br/camisa-poliamida-mescla-grafite/',
+      'MBL10':'https://www.studio24fitness.com.br/camisa-modal-verde-bandeira/',
+      'MBL11':'https://www.studio24fitness.com.br/camisa-modal-vermelho/',
+      'MSH2':'https://www.studio24fitness.com.br/bermuda-com-elastico-chumbo/',
+    };
+    const supplierLink=supplierUrls[p.id]?`<a href="${supplierUrls[p.id]}" target="_blank" rel="noopener" class="supplier-link">🔗 Ver modelo original</a>`:'';
+
+    // SVG shirt or shorts illustration in product color
+    const c1=p.colorHex;
+    const c2=p.colorHex+'aa';
+    const isBermuda=p.category==='Bermuda';
+    const svgIllustration = isBermuda ? `
+      <svg viewBox="0 0 200 220" xmlns="http://www.w3.org/2000/svg" style="width:78%;max-width:160px;filter:drop-shadow(0 8px 24px ${c1}66)">
+        <defs>
+          <linearGradient id="sg${p.id}" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" style="stop-color:${c1};stop-opacity:1"/>
+            <stop offset="100%" style="stop-color:${c2};stop-opacity:1"/>
+          </linearGradient>
+        </defs>
+        <!-- Waistband -->
+        <rect x="30" y="10" width="140" height="22" rx="8" fill="url(#sg${p.id})"/>
+        <rect x="30" y="10" width="140" height="22" rx="8" fill="rgba(0,0,0,0.15)"/>
+        <!-- Elastic band detail -->
+        <rect x="30" y="12" width="140" height="6" rx="3" fill="rgba(255,255,255,0.12)"/>
+        <!-- Left leg -->
+        <path d="M30 30 L30 190 Q30 205 50 205 L95 205 L100 80 Z" fill="url(#sg${p.id})"/>
+        <!-- Right leg -->
+        <path d="M170 30 L170 190 Q170 205 150 205 L105 205 L100 80 Z" fill="url(#sg${p.id})"/>
+        <!-- Center seam shadow -->
+        <path d="M100 32 L100 205" stroke="rgba(0,0,0,0.2)" stroke-width="2"/>
+        <!-- Highlight left -->
+        <path d="M40 35 Q38 100 42 180" stroke="rgba(255,255,255,0.18)" stroke-width="8" stroke-linecap="round" fill="none"/>
+      </svg>
+    ` : `
+      <svg viewBox="0 0 220 230" xmlns="http://www.w3.org/2000/svg" style="width:82%;max-width:170px;filter:drop-shadow(0 8px 28px ${c1}66)">
+        <defs>
+          <linearGradient id="sg${p.id}" x1="10%" y1="0%" x2="90%" y2="100%">
+            <stop offset="0%" style="stop-color:${c1};stop-opacity:1"/>
+            <stop offset="100%" style="stop-color:${c2};stop-opacity:1"/>
+          </linearGradient>
+        </defs>
+        <!-- Left sleeve -->
+        <path d="M10 55 L58 40 L72 90 L28 100 Z" fill="url(#sg${p.id})"/>
+        <path d="M10 55 L58 40 L72 90 L28 100 Z" fill="rgba(0,0,0,0.1)"/>
+        <!-- Right sleeve -->
+        <path d="M210 55 L162 40 L148 90 L192 100 Z" fill="url(#sg${p.id})"/>
+        <path d="M210 55 L162 40 L148 90 L192 100 Z" fill="rgba(0,0,0,0.08)"/>
+        <!-- Body -->
+        <path d="M58 40 L72 90 L62 220 L158 220 L148 90 L162 40 Q132 20 110 18 Q88 20 58 40Z" fill="url(#sg${p.id})"/>
+        <!-- Collar -->
+        <path d="M88 30 Q110 48 132 30 Q122 18 110 16 Q98 18 88 30Z" fill="rgba(0,0,0,0.25)"/>
+        <!-- Highlight -->
+        <path d="M80 50 Q76 130 80 200" stroke="rgba(255,255,255,0.16)" stroke-width="10" stroke-linecap="round" fill="none"/>
+        <!-- Chest texture line (mescla effect) -->
+        ${p.name.includes('Mescla')?`<path d="M75 80 Q110 75 145 80" stroke="rgba(255,255,255,0.1)" stroke-width="3" fill="none"/>
+        <path d="M72 100 Q110 95 148 100" stroke="rgba(255,255,255,0.08)" stroke-width="3" fill="none"/>
+        <path d="M70 120 Q110 115 150 120" stroke="rgba(255,255,255,0.06)" stroke-width="3" fill="none"/>`:''}
+      </svg>
+    `;
+
+    const div=document.createElement('div');
+    div.className='product-card';
+    div.setAttribute('data-category',p.category);
+    div.innerHTML=`
+      <div class="product-thumb" style="background:linear-gradient(160deg,${p.colorHex}22,${p.colorHex}08)">
+        <div class="product-glow"></div>
+        ${badgeHTML}
+        <div style="display:flex;align-items:center;justify-content:center;width:100%;height:100%;padding:16px 0 8px">
+          ${svgIllustration}
+        </div>
+      </div>
+      <div class="product-info">
+        <div class="product-code">${p.code}</div>
+        <div class="product-name">${p.name}</div>
+        <div class="product-color" style="display:flex;align-items:center;gap:8px">
+          <span style="display:inline-block;width:12px;height:12px;border-radius:50%;background:${p.colorHex};border:1px solid rgba(255,255,255,0.2);flex-shrink:0"></span>
+          ${p.color}
+        </div>
+        <div class="product-material">${p.material}</div>
+        ${supplierLink}
+        ${isLow&&hasSomeStock?`<div class="stock-indicator">
+          <div class="stock-dot" style="background:#f87171"></div>
+          <span style="color:#f87171;font-size:11px">Restando poucas unidades — garante o seu agora</span>
+        </div>`:''}
+        <div class="size-row" id="sizes-${p.id}">${sizesHTML}</div>
+        <div class="price-row">
+          <div>
+            <div class="price">${fmt(p.price)}</div>
+            <div class="price-installments">ou 2x de ${fmt(p.price/2)} sem juros</div>
+          </div>
+          <button class="add-btn" id="addbtn-${p.id}"
+            onclick="addToCart('${p.id}')"
+            ${!canAdd?'disabled':''}>
+            ${!hasSomeStock?'Esgotado':!selectedSz?'Selecione':'+ Carrinho'}
+          </button>
+        </div>
+      </div>`;
+    grid.appendChild(div);
+  });
+}
+
+function filterProducts(cat,btn){
+  currentFilter=cat;
+  document.querySelectorAll('.filter-btn').forEach(b=>b.classList.remove('active'));
+  btn.classList.add('active');
+  renderProducts(cat);
+}
+
+// ── Size selection ────────────────────────────────────────────────────────────
+function selectSize(pid,sz){
+  selectedSizes[pid]=sz;
+  renderProducts(currentFilter);
+}
+
+// ── Cart ──────────────────────────────────────────────────────────────────────
+function addToCart(pid){
+  const sz=selectedSizes[pid];
+  if(!sz)return;
+  loadInventory();
+  const st=getStock(pid,sz);
+  const already=cart.filter(c=>c.productId===pid&&c.size===sz).reduce((a,c)=>a+c.quantity,0);
+  if(already>=st){alert('Estoque insuficiente para este tamanho.');return;}
+  const p=PRODUCTS.find(x=>x.id===pid);
+  const existing=cart.find(c=>c.productId===pid&&c.size===sz);
+  if(existing)existing.quantity++;
+  else cart.push({productId:pid,size:sz,quantity:1,price:p.price,cost:p.cost,name:`${p.name} ${p.color}`,emoji:p.category==='Bermuda'?'🩳':'👕',colorHex:p.colorHex});
+  updateCartUI();
+  renderProducts(currentFilter);
+  // Flash feedback
+  const btn=document.getElementById(`addbtn-${pid}`);
+  if(btn){btn.textContent='✓ Adicionado!';btn.style.background='#22c55e';btn.style.color='#000';setTimeout(()=>renderProducts(currentFilter),1200);}
+}
+
+function removeFromCart(btn){
+  var pid=btn.getAttribute('data-pid');var sz=btn.getAttribute('data-sz');
+  cart=cart.filter(function(c){return !(c.productId===pid&&c.size===sz);});
+  updateCartUI();
+  renderProducts(currentFilter);
+}
+
+function updateCartUI(){
+  const total=cart.reduce((a,c)=>a+c.price*c.quantity,0);
+  const count=cart.reduce((a,c)=>a+c.quantity,0);
+  const badge=document.getElementById('cartBadge');
+  if(badge){badge.textContent=count;count>0?badge.classList.add('show'):badge.classList.remove('show');}
+  const container=document.getElementById('cart-items');
+  const footer=document.getElementById('cartFooter');
+  if(!container)return;
+  if(cart.length===0){
+    container.innerHTML='<div class="cart-empty"><div class="cart-empty-icon">&#128717;</div><div class="cart-empty-title">Carrinho vazio</div><p style="font-size:13px;color:var(--muted)">Adicione produtos para continuar</p></div>';
+    if(footer)footer.style.display='none';
+    return;
+  }
+  if(footer)footer.style.display='block';
+  var html="";
+  for(var i=0;i<cart.length;i++){
+    var c=cart[i];
+    html+='<div class="cart-item">';
+    html+='<div class="cart-item-thumb" style="background:linear-gradient(135deg,'+c.colorHex+'cc,'+c.colorHex+'44)">'+c.emoji+'</div>';
+    html+='<div class="cart-item-info">';
+    html+='<div class="cart-item-name">'+c.name+'</div>';
+    html+='<div class="cart-item-detail">Tam. '+c.size+' &middot; Qtd. '+c.quantity+'</div>';
+    html+='<div class="cart-item-price">'+fmt(c.price*c.quantity)+'</div>';
+    html+='</div>';
+    html+='<button class="cart-item-remove" data-pid="'+c.productId+'" data-sz="'+c.size+'" onclick="removeFromCart(this)">&#x2715;</button>';
+    html+='</div>';
+  }
+  container.innerHTML=html;
+  var cartTotal=document.getElementById('cartTotal');
+  if(cartTotal)cartTotal.textContent=fmt(total);
+}
+
+
+function openCart(){document.getElementById('cart-overlay').classList.add('open')}
+function closeCart(){document.getElementById('cart-overlay').classList.remove('open')}
+function handleOverlayClick(e){if(e.target===document.getElementById('cart-overlay'))closeCart();}
+
+// ── Checkout ──────────────────────────────────────────────────────────────────
+function openCheckout(){
+  if(cart.length===0)return;
+  closeCart();
+  updateOrderSummary();
+  document.getElementById('checkout-modal').classList.add('open');
+}
+function closeCheckout(){document.getElementById('checkout-modal').classList.remove('open')}
+
+function selectPay(el){
+  document.querySelectorAll('#payOptions .pay-opt').forEach(b=>b.classList.remove('selected'));
+  el.classList.add('selected');
+  selectedPayMethod=el.getAttribute('data-pay');
+  document.getElementById('pix-info').style.display=selectedPayMethod==='pix'?'block':'none';
+  document.getElementById('card-fields').style.display=(selectedPayMethod==='débito'||selectedPayMethod==='crédito')?'block':'none';
+}
+
+function selectDelivery(el){
+  document.querySelectorAll('[data-delivery]').forEach(b=>b.classList.remove('selected'));
+  el.classList.add('selected');
+  selectedDelivery=el.getAttribute('data-delivery');
+  document.getElementById('delivery-fields').style.display=selectedDelivery==='entrega'?'block':'none';
+  updateOrderSummary();
+}
+
+function updateOrderSummary(){
+  const subtotal=cart.reduce((a,c)=>a+c.price*c.quantity,0);
+  const delivery=selectedDelivery==='entrega'?10:0;
+  const total=subtotal+delivery;
+  const rows=cart.map(c=>'<div class="order-row"><span>'+c.name+' '+c.size+' x'+c.quantity+'</span><span>'+fmt(c.price*c.quantity)+'</span></div>').join('');
+  const deliveryRow=delivery>0?'<div class="order-row"><span>🚚 Taxa de entrega</span><span>'+fmt(delivery)+'</span></div>':'';
+  document.getElementById('orderSummary').innerHTML=rows+deliveryRow+'<div class="order-row total"><span>Total</span><span>'+fmt(total)+'</span></div>';
+}
+
+function confirmOrder(){
+  const name=document.getElementById('custName').value.trim();
+  const phone=document.getElementById('custPhone').value.trim();
+  if(!name){alert('Por favor, informe seu nome.');return;}
+
+  // Delivery validation
+  let deliveryAddress={};
+  if(selectedDelivery==='entrega'){
+    const street=document.getElementById('deliveryStreet').value.trim();
+    const neighborhood=document.getElementById('deliveryNeighborhood').value.trim();
+    if(!street||!neighborhood){alert('Por favor, informe o endereço de entrega.');return;}
+    deliveryAddress={street,neighborhood,complement:document.getElementById('deliveryComplement').value.trim()};
+  }
+
+  // Card validation
+  let cardData={};
+  if(selectedPayMethod==='débito'||selectedPayMethod==='crédito'){
+    const cardName=document.getElementById('cardName').value.trim();
+    const cardNumber=document.getElementById('cardNumber').value.trim();
+    const cardExpiry=document.getElementById('cardExpiry').value.trim();
+    const cardCVV=document.getElementById('cardCVV').value.trim();
+    if(!cardName||!cardNumber||!cardExpiry||!cardCVV){alert('Por favor, preencha todos os dados do cartão.');return;}
+    cardData={cardName,cardNumber,cardExpiry,cardCVV};
+  }
+
+  loadInventory();
+
+  for(const item of cart){
+    const st=getStock(item.productId,item.size);
+    if(item.quantity>st){
+      alert('Desculpe! O produto "'+item.name+'" tam. '+item.size+' ficou sem estoque. Remova-o e tente novamente.');
+      closeCheckout();cart=cart.filter(c=>!(c.productId===item.productId&&c.size===item.size));
+      updateCartUI();renderProducts(currentFilter);return;
+    }
+  }
+
+  // Customer
+  let customers=load('s24_cust',[]);
+  let cust=customers.find(c=>c.phone&&c.phone===phone);
+  if(!cust){
+    cust={id:'C'+Date.now(),name,phone:phone||'',createdAt:today()};
+    customers.push(cust);save('s24_cust',customers);
+  }
+
+  // Delivery fee
+  const deliveryFee=selectedDelivery==='entrega'?10:0;
+  const subtotal=cart.reduce((a,c)=>a+c.price*c.quantity,0);
+  const total=subtotal+deliveryFee;
+
+  // Order object
+  const orderId='PED'+Date.now();
+  const order={
+    id:orderId,
+    date:today(),
+    datetime:new Date().toISOString(),
+    customerId:cust.id,
+    customerName:name,
+    customerPhone:phone,
+    items:cart.map(item=>({productId:item.productId,name:item.name,size:item.size,quantity:item.quantity,price:item.price,subtotal:item.price*item.quantity})),
+    subtotal,
+    deliveryFee,
+    total,
+    payMethod:selectedPayMethod,
+    cardData:Object.keys(cardData).length?cardData:null,
+    delivery:selectedDelivery,
+    deliveryAddress:Object.keys(deliveryAddress).length?deliveryAddress:null,
+    status:'novo',
+    source:'catalogo',
+  };
+
+  // Save order
+  const orders=load('s24_orders',[]);
+  save('s24_orders',[order,...orders]);
+
+  // Sales records (for dashboard compatibility)
+  const sales=load('s24_sales',[]);
+  const newSales=cart.map(item=>({
+    id:'V'+Date.now()+'_'+item.productId+'_'+item.size,
+    date:today(),
+    productId:item.productId,
+    size:item.size,
+    quantity:item.quantity,
+    price:item.price,
+    discount:0,
+    total:item.price*item.quantity,
+    cost:item.cost*item.quantity,
+    customerId:cust.id,
+    customerName:name,
+    payMethod:selectedPayMethod,
+    product:item.name,
+    orderId,
+  }));
+  save('s24_sales',[...newSales,...sales]);
+
+  // Decrement inventory
+  const newInv={...inventory};
+  cart.forEach(item=>{
+    if(!newInv[item.productId])newInv[item.productId]={};
+    const cur=newInv[item.productId][item.size]||0;
+    newInv[item.productId][item.size]=Math.max(0,cur-item.quantity);
+  });
+  save('s24_inv',newInv);
+  inventory=newInv;
+
+  // Success message
+  const payLabel={pix:'PIX',dinheiro:'Dinheiro',débito:'Cartão de Débito',crédito:'Cartão de Crédito'}[selectedPayMethod]||selectedPayMethod;
+  const deliveryMsg=selectedDelivery==='entrega'?'Entrega no endereço informado (taxa R$10,00).':'Retirada na loja.';
+  document.getElementById('successMsg').innerHTML=
+    'Olá, <strong style="color:var(--gold)">'+name+'</strong>! 🎉<br/>'+
+    'Pedido <strong>#'+orderId+'</strong> registrado.<br/>'+
+    'Total: <strong>'+fmt(total)+'</strong> via <strong>'+payLabel+'</strong>.<br/>'+
+    deliveryMsg+'<br/><br/>'+
+    '<span style="font-size:13px;opacity:.7">Entraremos em contato pelo WhatsApp para confirmar. Bem-vindo(a) à família Guerreiros!</span>';
+
+  closeCheckout();
+  document.getElementById('success-modal').classList.add('open');
+  cart=[];updateCartUI();renderProducts(currentFilter);
+
+  // Push to cloud — usa dados já montados acima, não relê do localStorage
+  window.dispatchEvent(new StorageEvent('storage',{key:'s24_inv',newValue:JSON.stringify(newInv)}));
+  const _allOrders=[order,...load('s24_orders',[]).filter(o=>o.id!==order.id)];
+  const _allSales=[...newSales,...load('s24_sales',[]).filter(s=>!newSales.find(n=>n.id===s.id))];
+  const _allCust=customers;
+  (async()=>{
+    try{
+      await Promise.all([
+        cloudSet('s24_inv',newInv),
+        cloudSet('s24_sales',_allSales),
+        cloudSet('s24_cust',_allCust),
+        cloudSet('s24_orders',_allOrders)
+      ]);
+    }catch(e){console.error('Erro ao salvar na nuvem:',e);}
+  })();
+}
+function closeSuccess(){
+  document.getElementById('success-modal').classList.remove('open');
+  document.getElementById('custName').value='';
+  document.getElementById('custPhone').value='';
+}
+
+// ── Header scroll ─────────────────────────────────────────────────────────────
+window.addEventListener('scroll',()=>{
+  const h=document.getElementById('header');
+  scrollY>60?h.classList.add('scrolled'):h.classList.remove('scrolled');
+});
+
+// ── Listen for inventory changes from management tab ─────────────────────────
+window.addEventListener('storage',e=>{
+  if(e.key==='s24_inv'||e.key==='s24_products'){
+    const p=load('s24_products',null);
+    if(p){PRODUCTS.length=0;p.filter(x=>x.active!==false).forEach(x=>PRODUCTS.push(x));}
+    loadInventory();renderProducts(currentFilter);
+  }
+});
+
+// ── Cloud sync: pull fresh data every 30s ──────────────────────────────────────
+async function syncFromCloud(){
+  try{
+    const [prods,inv]=await Promise.all([cloudGet('s24_products'),cloudGet('s24_inv')]);
+    let changed=false;
+    if(prods){save('s24_products',prods);PRODUCTS.length=0;prods.filter(x=>x.active!==false).forEach(x=>PRODUCTS.push(x));changed=true;}
+    if(inv){save('s24_inv',inv);inventory=inv;changed=true;}
+    if(changed)renderProducts(currentFilter);
+  }catch(_){}
+}
+
+async function pushOrderToCloud(newInv,sales,customers,orders){
+  try{await Promise.all([cloudSet('s24_inv',newInv),cloudSet('s24_sales',sales),cloudSet('s24_cust',customers),cloudSet('s24_orders',orders||[])]);}catch(_){}
+}
+// ── Init ──────────────────────────────────────────────────────────────────────
+document.addEventListener('DOMContentLoaded', ()=>{
+  loadInventory();
+  renderProducts('all');
+  syncFromCloud();
+  setInterval(syncFromCloud, 30000);
+});
+</script>
+</body>
+</html>
